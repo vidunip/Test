@@ -182,7 +182,7 @@ footer{
 
 @font-face {
     font-family: 'AestheticRomance';
-    src: url('../Fonts/AestheticRomance.ttf') format('truetype');
+    src: url('https://vidunip.github.io/Test/Fonts/AestheticRomance.ttf');
     font-weight: normal;
     font-style: normal;
 }
