@@ -1,0 +1,188 @@
+/*------------------------------------------------General--------------------------------------------------------------------------------*/
+*{
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(to right, #1b0051, #150037);
+    /* background-image: url('../Images/bg.jpeg'); */
+    background-size: cover; /* Makes the image cover the entire screen */    
+    background-repeat: repeat; /* Prevents the image from repeating */
+}
+
+/*------------------------------------------------Nav--------------------------------------------------------------------------------*/
+
+.topbar img /*For the logo*/{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 50px;
+    justify-content: left;
+}
+
+.navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-right: 50px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    position: relative; 
+    transition: 0.25s;
+    font-family: 'AestheticRomance', serif;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 0%; 
+    height: 3px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.triangle{
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3b00afed;
+    min-width: 200px;
+    box-shadow: 0 4px 8px #00000033;
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1001;
+    margin-top: 5px;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+
+    li{
+        display: block;
+        float: none !important;
+        margin: 0 !important;
+        padding: 0;
+        width: 100%;
+
+        a{
+            display: block;
+            padding: 8px 16px;
+            font-size: 20px !important;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            float: none !important;
+            position: relative; /* Required for the ::after pseudo-element */
+            transition: color 0.25s;
+
+            ::after{
+                content: ''; /* Empty pseudo-element for the underline */
+                position: absolute; /* Positioned relative to the <a> */
+                bottom: 0; /* Align at the bottom of the link */
+                left: 0; /* Start at the left edge */
+                width: 0%; /* Initially hidden */
+                height: 0.5px; /* Thickness of the underline */
+                background-color: white; /* Underline color */
+                transition: width 0.4s ease; 
+            }
+
+            :hover{
+                ::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #3b00afed;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    padding-left: 10px 7%;
+    padding-right:10px 7%;
+    padding-top: 10px 5%;
+    padding-bottom:10px 5%;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+@media (max-width: 1100px) { /*Making the navigation bar mobile responsive*/
+    .topbar img {
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+        margin-right: 2px;
+    }
+
+    .triangle {
+        display: none;
+    }
+
+    .navbar ul {
+        display: inline-flex; /* Makes list items appear side by side */
+        align-self: center;
+        float: none;
+        margin-left: 1px;
+
+        li a{
+            margin-right: 0px;
+            font-size: 25px;
+        }
+    }
+}
+
+/*------------------------------------------------Footer--------------------------------------------------------------------------------*/
+
+footer{
+    margin-top: 100px;
+    border-top: 1px solid white;
+}
+
+/*------------------------------------------------Fonts--------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'AestheticRomance';
+    src: url('../Fonts/AestheticRomance.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
